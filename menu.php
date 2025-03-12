@@ -1,3 +1,13 @@
+<!-- Cart Icon -->
+<li class="nav-item">
+         <a class="nav-link position-relative" href="<?= base_url('/cart') ?>">
+                <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <?= session()->get('cart_count') ?? 0 ?>
+                    </span>
+                </a>
+            </li>
+            
 <!-- Search Bar -->
 <div class="d-flex justify-content-end mt-3">
     <div class="input-group w-50">
@@ -16,23 +26,25 @@
     </div>
 
     <div class="row justify-content-center align-items-center text-decoration-none g-4">
-        <?php foreach ($news_list as $news_item): ?>
-            <div class="col-md-4 d-flex justify-content-center">
+    <?php foreach ($news_list as $news_item): ?>
+        <div class="col-md-4 d-flex justify-content-center">
             <div class="card shadow-lg" style="width: 18rem; border-radius: 10px; overflow: hidden;">
-                    <img src="img/veg-fried-ricw.jpg<?= esc($news_item['image']) ?>" class="card-img-top food-img" alt="<?= esc($news_item['name']) ?>">
-                    <div class="card-body text-center">
-                        <h5 class="card-title"><?= esc($news_item['name']) ?></h5>
-                        <p class="fw-bold">Price: £<?= esc($news_item['price']) ?></p>
-                        <a href="#" class="btn btn-outline-success">
-                         <i class="bi bi-cart-plus"></i> Add to Basket
-                        </a>
-                        <!-- Unique View Button for each item -->
-                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#viewFood<?= esc($news_item['id']) ?>">View</button>
-                    </div>
-                </div>
-            </div> 
-   
+                <img src="<?= esc($news_item['image']) ?>" 
+                     class="card-img-top food-img" 
+                     alt="<?= esc($news_item['name']) ?>"
+                     style="height: 200px; object-fit: cover;">
 
+                <div class="card-body text-center">
+                    <h5 class="card-title"><?= esc($news_item['name']) ?></h5>
+                    <p class="fw-bold">Price: £<?= esc($news_item['price']) ?></p>
+                    <a href="#" class="btn btn-outline-success">
+                        <i class="bi bi-cart-plus"></i> Add to Basket
+                    </a>
+                    <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#viewFood<?= esc($news_item['id']) ?>">View</button>
+                </div>
+            </div>
+        </div>
+   
         <!-- Modal for each food item -->
     <div class="modal fade" id="viewFood<?= esc($news_item['id']) ?>" tabindex="-1">
         <div class="modal-dialog">
@@ -58,3 +70,8 @@
 <?php endif ?>
 
 </div>
+
+
+
+     
+            
