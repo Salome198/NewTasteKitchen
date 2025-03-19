@@ -9,35 +9,102 @@
     </div>
 </div>
 
-<!-- Page Content -->
-    <div class="container mt-5">
-        <h1>Privacy Policy</h1>
-        <p>
-            At Your Company, we respect your privacy. This Privacy Policy explains how we collect, use, and protect your personal information. By using our services, you agree to the terms outlined in this policy.
-        </p>
-
-        <h2>1. Information We Collect</h2>
-        <p>
-            We collect personal information when you register on our site, subscribe to our newsletter, or make a purchase. This information may include your name, email address, and payment details.
-        </p>
-
-        <h2>2. How We Use Your Information</h2>
-        <p>
-            We use the information collected to provide you with better services, including processing your orders and improving user experience on our site.
-        </p>
-
-        <h2>3. Data Protection</h2>
-        <p>
-            We implement a variety of security measures to maintain the safety of your personal information when you place an order or access your personal information.
-        </p>
-
-        <h2>4. Third-party Disclosure</h2>
-        <p>
-            We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information.
-        </p>
-
-        <h2>5. Contact Information</h2>
-        <p>
-            If you have any questions about this Privacy Policy, feel free to contact us at contact@yourcompany.com.
-        </p>
+<!-- Header Section -->
+<div class="container mt-5">
+    <div class="text-center policy-header">
+        <h1 class="fw-bold">Our Policies</h1>
+        <p class="lead">Learn about our terms, conditions, and service policies.</p>
     </div>
+
+    <!-- Row to Display Policies -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <!-- Policy 1: Minimum 24 Hours Order Time -->
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <i class="bi bi-clock policy-icon"></i>
+                    </div>
+                    <h5 class="card-title text-center fw-bold">Minimum 24 Hours Order Time</h5>
+                    <p class="card-text text-muted">Orders must be placed at least 24 hours in advance to ensure timely preparation and delivery.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Policy 2: Cancellation Charge -->
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <i class="bi bi-x-circle policy-icon"></i>
+                    </div>
+                    <h5 class="card-title text-center fw-bold">Cancellation Charge</h5>
+                    <p class="card-text text-muted">A 10% cancellation fee applies if an order is canceled within 12 hours of delivery time.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Policy 3: Deposit for Events -->
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <i class="bi bi-wallet policy-icon"></i>
+                    </div>
+                    <h5 class="card-title text-center fw-bold">Deposit for Events</h5>
+                    <p class="card-text text-muted">A 50% non-refundable deposit is required for event catering services to confirm your booking.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Policy 4: No Refund After 24 Hours -->
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <i class="bi bi-shield-exclamation policy-icon"></i>
+                    </div>
+                    <h5 class="card-title text-center fw-bold">No Refund After 24 Hours</h5>
+                    <p class="card-text text-muted">Refunds will not be issued for cancellations made after 24 hours before the scheduled order time.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Policy 5: Food Safety and Hygiene -->
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <i class="bi bi-clipboard-check policy-icon"></i>
+                    </div>
+                    <h5 class="card-title text-center fw-bold">Food Safety & Hygiene</h5>
+                    <p class="card-text text-muted">We ensure that all food is prepared following strict safety and hygiene protocols.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Policy 6: Delivery Time and Conditions -->
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <i class="bi bi-truck policy-icon"></i>
+                    </div>
+                    <h5 class="card-title text-center fw-bold">Delivery Time and Conditions</h5>
+                    <p class="card-text text-muted">Deliveries may take 1-2 hours depending on location and order size.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Back Button -->
+    <div class="text-center mt-4">
+        <a href="home.php" class="btn btn-outline-success">
+            <i class="bi bi-arrow-left"></i> Back to Home
+        </a>
+    </div>
+</div>
+
+
