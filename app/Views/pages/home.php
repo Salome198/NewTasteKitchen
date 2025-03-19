@@ -8,7 +8,6 @@
     </div>
 </div>
         
-
 <div class="container my-5">
     <h2 class="text-center mb-4">🌟 WELCOME TO NEW TASTE KITCHEN </h2>
     <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
