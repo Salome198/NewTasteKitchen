@@ -1,0 +1,10 @@
+/* Add space between the content and the footer */
+footer {
+    margin-top: 50px; /* Space between footer and last element */
+    width: 100%; /* Full width */
+}
+
+/* Optional: Add padding if needed */
+footer p {
+    margin-bottom: 0;
+}
