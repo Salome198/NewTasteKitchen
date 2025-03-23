@@ -1,92 +1,57 @@
-<div class="container-fluid my-5">
-<h1>
-    Menu
-</h1>
-<a href="home.php" class="btn btn-success text-light">home</a>
-<a href="menu.php" class="btn btn-success text-light">menu</a>
-<a href="policies.php" class="btn btn-success text-light">policies</a>
-<a href="checkout.php" class="btn btn-success text-light">checkout</a>
+<h2><?= esc($title) ?></h2>
 
-<p>Please select what you would like form the menu below</p>
+<?php if ($news_list !== []): ?>
 
-<!-- Search Bar -->
-<div class="d-flex justify-content-end">
-    <input type="search" id="search" class="form-control w-25" placeholder="Search for food...">
-</div>
+    <div class="text-center"> 
+        <h2>Our Delicious Menu</h2>
+    </div>
 
- <!-- Food List Table -->
- <table class="table table-striped mt-3">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th>Image</th>
-                </tr>
-</thead>
+    <div class="row justify-content-center align-items-center text-decoration-none g-4">
+    <?php foreach ($news_list as $news_item): ?>
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card shadow-lg" style="width: 18rem; border-radius: 10px; overflow: hidden;">
+                <img src="<?= esc($news_item['image']) ?>" 
+                     class="card-img-top food-img" 
+                     alt="<?= esc($news_item['name']) ?>"
+                     style="height: 200px; object-fit: cover;">
 
-<tbody id="foodTable">
-                <tr>
-                    <td>1</td>
-                    <td>Jollof Rice</td>
-                    <td>Delicious West African rice cooked with tomatoes and spices</td>
-                    <td>£5.99</td>
-                    <td>Rice</td>
-                    <td><img src="img/Jollof Rice.jpg" alt="Jollof Rice" width="100"></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Fried Rice</td>
-                    <td>Rice stir-fried with vegetables and special seasoning</td>
-                    <td>£6.49</td>
-                    <td>Rice</td>
-                    <td><img src="img/veg-fried-rice.jpg" alt="Fried Rice" width="100"></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Egusi Sooup</td>
-                    <td>Rich melon seed soup with meat and vegetables</td>
-                    <td>£9.50</td>
-                    <td>Soup</td>
-                    <td><img src="img/Egusi soup.jpg" alt="Egusi soup" width="100"></td>
-                </tr>
-            </tbody>
+                <div class="card-body text-center">
+                    <h5 class="card-title"><?= esc($news_item['name']) ?></h5>
+                    <p class="fw-bold">Price: £<?= esc($news_item['price']) ?></p>
+                    <a href="orderredirect.php?id=<?= esc($news_item['id']) ?>" class="btn btn-outline-success">
+                        <i class="bi bi-cart-plus"></i> Order on just eat
+                    </a>
+                    <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#viewFood<?= esc($news_item['id']) ?>">View</button>
+                </div>
+            </div>
+        </div>
+   
+          
 
-            <tfoot>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th>Image</th>
-                </tr>
-            </tfoot>
-</table>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-    // Function to fetch food data
-    function fetchFood(query = '') {
-        $.ajax({
-            url: "search.php", // The PHP script handling the search
-            method: "POST",
-            data: { query: query },
-            success: function(response) {
-                $("#foodTable").html(response);
-            }
-        });
-    }
 
-    fetchFood();
-    $("#search").on("keyup", function() {
-        let query = $(this).val();
-        fetchFood(query);
-    });
-});
-</script>
+        <!-- Modal for each food item -->
+    <div class="modal fade" id="viewFood<?= esc($news_item['id']) ?>" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><?= esc($news_item['name']) ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Description:</strong> <?= esc($news_item['description']) ?></p>
+                    <p><strong>Ingredients:</strong> <?= esc($news_item['ingredients']) ?></p>
+                    <p><strong>Allergens:</strong> <?= esc($news_item['allergens']) ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php endforeach ?>
+
+<?php else: ?>
+    <h3>No food</h3>
+    <p>Unable to find any food for you.</p>
+<?php endif ?>
 
 </div>
