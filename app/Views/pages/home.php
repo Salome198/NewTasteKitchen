@@ -44,23 +44,61 @@
 
 <!-- Food Items and Discount Section -->
 <div class="container my-5">
-    <div class="row align-items-center">
-        <div class="col-md-4 text-center">
-            <img src="img/veg-fried-rice.jpg" class="food-img mb-3 img-fluid" alt="Fried Rice" style="max-width:200px; max-height: 150px; object-fit:cover;">
-            <h5>Fried Rice</h5>
-            <p class="text-muted">Price: £6.49</p>
+    <h2 class="text-center mb-4 fw-bold">🍽️ Enjoy Our Special Delicacies & Discount!</h2>
+
+    <div class="row g-4 justify-content-center">
+        <!-- Fried Rice Card -->
+        <div class="col-md-4">
+            <div class="card shadow-lg h-100 d-flex flex-column justify-content-between border-0 rounded-lg" style="min-height: 420px;">
+                <img src="img/veg-fried-rice.jpg" class="card-img-top img-fluid" alt="Fried Rice" 
+                    style="height: 200px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Fried Rice</h5>
+                    <p class="text-muted">Delicious vegetable fried rice with a touch of spice.</p>
+                    <p class="fw-bold text-success">Price: £6.49</p>
+                </div>
+                <div class="card-footer bg-white border-0 text-center">
+                    <a href="#" class="btn btn-outline-success btn-sm"><i class="bi bi-cart-plus"></i> Add to Basket</a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 text-center">
-            <img src="img/20 discount.jpg" class="discount-img mb-3 img-fluid" alt="20% Off" style="max-width:200px; max-height: 150px; object-fit:cover;">
-            <h5 class="text-success fw-bold">Get 20% Off When You Spend £30!</h5>
+
+        <!-- 20% Discount Card -->
+        <div class="col-md-4">
+            <div class="card shadow-lg h-100 d-flex flex-column justify-content-between border-0 bg-light rounded-lg" style="min-height: 420px;">
+                <img src="img/20 discount.jpg" class="card-img-top img-fluid" alt="20% Off" 
+                    style="height: 200px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold text-success">🎉 Get 20% Off!</h5>
+                    <p class="text-muted">Spend £30 or more and enjoy a 20% discount on your order.</p>
+                    <div class="badge bg-success text-white position-absolute top-0 start-50 translate-middle mt-2 p-2 rounded-pill">
+                        Limited Time Only!
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0 text-center">
+                    <a href="#" class="btn btn-success btn-sm"><i class="bi bi-tag"></i> Claim Discount</a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 text-center">
-            <img src="img/Peppered Turkey.jpg" class="food-img mb-3 img-fluid" alt="Spicy Turkey Wings" style="max-width:200px; max-height: 150px; object-fit:cover;">
-            <h5>Peppered Turkey</h5>
-            <p class="text-muted">Price: £9.50</p>
+
+        <!-- Peppered Turkey Card -->
+        <div class="col-md-4">
+            <div class="card shadow-lg h-100 d-flex flex-column justify-content-between border-0 rounded-lg" style="min-height: 420px;">
+                <img src="img/Peppered Turkey.jpg" class="card-img-top img-fluid" alt="Spicy Turkey Wings" 
+                    style="height: 200px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Peppered Turkey</h5>
+                    <p class="text-muted">Savory turkey wings tossed in spicy pepper sauce.</p>
+                    <p class="fw-bold text-success">Price: £9.50</p>
+                </div>
+                <div class="card-footer bg-white border-0 text-center">
+                    <a href="#" class="btn btn-outline-success btn-sm"><i class="bi bi-cart-plus"></i> Add to Basket</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 
 
 <!-- Reviews Section -->
