@@ -1,57 +1,57 @@
 <?php
 namespace App\Controllers;
 use App\Models\CustomerReviewModel;
-use CodeIgniter\Controller;
 
-class ReviewController extends Controller
+class ReviewsController extends BaseController
 {
 
 
-    public function submitReview() 
+    public function submitReview()
     {
-        $model = model(CustomerReviewModel::class);
 
-        $data = [
-            'news_list' => $model->getReview(),
-            'title'     => '..',
-        ];
-
-        helper('form');
 
         return view('templates/header', ['title' => 'Create a news item'])
-            . view('page/create')
+            . view('pages/create')
             . view('templates/footer');
     }
+    
     public function create()
     {
-        helper('form');
+        
+            $reviewModel = new CustomerReviewModel();
+    
+            // Get POST data
+            $name = $this->request->getPost('name');
+            $review = $this->request->getPost('review');
+    
+            // Validate if data is not empty
+            if (empty($name) || empty($review)) {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'All fields are required']);
+            }
+    
+            // Insert into the database
+            $data = [
+                'name' => $name,
+                'review' => $review
+            ];
+    
+            if ($reviewModel->insert($data)) {
+                return redirect()->to('/review.php')->with('success', '🎉 Review added successfully!');
+            } else {
+                // Redirect with error message
+                return redirect()->to('/review.php')->with('error', '❗️ Failed to add review. Try again!');
+            }
 
-        $data = $this->request->getPost(['name', 'review']);
-
-        // Checks whether the submitted data passed the validation rules.
-        if (! $this->validateData($data, [
-            'name' => 'required|max_length[255]|min_length[3]',
-            'review'  => 'required|max_length[5000]|min_length[10]',
-        ])) {
-            // The validation fails, so returns the form.
-            return $this->new();
         }
-
-        // Gets the validated data.
-        $post = $this->validator->getValidated();
-
-        $model = model(CustomerReviewModel::class);
-
-        $model->save([
-            'name' => $post['name'],
-            'slug'  => url_title($post['title'], '-', true),
-            'review'  => $post['review'],
-        ]);
-
-        return view('templates/header', ['title' => 'Create Review'])
-            . view('pages/success')
-            . view('templates/footer');
-    }
-
-
+    
+        // Get All Reviews - To display on homepage
+        public function getReviews()
+        {
+            $reviewModel = new CustomerReviewModel();
+            $data['reviews'] = $reviewModel->orderBy('created_at', 'DESC')->findAll();
+    
+            return view('home', $data);
+        }
+       
 }
+
