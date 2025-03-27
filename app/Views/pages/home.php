@@ -1,4 +1,4 @@
-<div class="container my-5">
+div class="container my-5">
     <h2 class="text-center mb-4">🌟 WELCOME TO NEW TASTE KITCHEN </h2>
     <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner text-center">
@@ -47,27 +47,26 @@
     <h2 class="text-center mb-4 fw-bold">🍽️ Enjoy Our Special Delicacies & Discount!</h2>
 
     <div class="row g-4 justify-content-center">
-        <!-- Fried Rice Card -->
         <div class="col-md-4">
-            <div class="card shadow-lg h-100 d-flex flex-column justify-content-between border-0 rounded-lg" style="min-height: 420px;">
-                <img src="img/veg-fried-rice.jpg" class="card-img-top img-fluid" alt="Fried Rice" 
-                    style="height: 200px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+            <div class="card shadow-lg h-100 d-flex flex-column justify-content-between border-0 rounded-lg" style="min-height: 380px;">
+                <img src="../img/veg-fried-rice.jpg" class="card-img-top img-fluid" alt="Fried Rice" 
+                    style="height: 160px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
                 <div class="card-body text-center">
                     <h5 class="card-title fw-bold">Fried Rice</h5>
                     <p class="text-muted">Delicious vegetable fried rice with a touch of spice.</p>
                     <p class="fw-bold text-success">Price: £6.49</p>
                 </div>
                 <div class="card-footer bg-white border-0 text-center">
-                    <a href="#" class="btn btn-outline-success btn-sm"><i class="bi bi-cart-plus"></i> Add to Basket</a>
+                <a href="orderredirect.php" class="btn btn-outline-success btn-sm">
+                <i class="bi bi-cart-plus"></i> Order on just eat</a>
                 </div>
             </div>
         </div>
 
-        <!-- 20% Discount Card -->
         <div class="col-md-4">
-            <div class="card shadow-lg h-100 d-flex flex-column justify-content-between border-0 bg-light rounded-lg" style="min-height: 420px;">
-                <img src="img/20 discount.jpg" class="card-img-top img-fluid" alt="20% Off" 
-                    style="height: 200px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+            <div class="card shadow-lg h-100 d-flex flex-column justify-content-between border-0 bg-light rounded-lg" style="min-height: 380px;">
+                <img src="../img/20 discount.jpg" class="card-img-top img-fluid" alt="20% Off" 
+                    style="height: 160px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
                 <div class="card-body text-center">
                     <h5 class="card-title fw-bold text-success">🎉 Get 20% Off!</h5>
                     <p class="text-muted">Spend £30 or more and enjoy a 20% discount on your order.</p>
@@ -76,29 +75,28 @@
                     </div>
                 </div>
                 <div class="card-footer bg-white border-0 text-center">
-                    <a href="#" class="btn btn-success btn-sm"><i class="bi bi-tag"></i> Claim Discount</a>
+                    <a href="orderredirect.php" class="btn btn-success btn-sm"><i class="bi bi-tag"></i> Claim Discount</a>
                 </div>
             </div>
         </div>
 
-        <!-- Peppered Turkey Card -->
         <div class="col-md-4">
-            <div class="card shadow-lg h-100 d-flex flex-column justify-content-between border-0 rounded-lg" style="min-height: 420px;">
-                <img src="img/Peppered Turkey.jpg" class="card-img-top img-fluid" alt="Spicy Turkey Wings" 
-                    style="height: 200px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+            <div class="card shadow-lg h-100 d-flex flex-column justify-content-between border-0 rounded-lg" style="min-height: 380px;">
+                <img src="../img/Peppered Turkey.jpg" class="card-img-top img-fluid" alt="Spicy Turkey Wings" 
+                    style="height: 160px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
                 <div class="card-body text-center">
                     <h5 class="card-title fw-bold">Peppered Turkey</h5>
                     <p class="text-muted">Savory turkey wings tossed in spicy pepper sauce.</p>
                     <p class="fw-bold text-success">Price: £9.50</p>
                 </div>
                 <div class="card-footer bg-white border-0 text-center">
-                    <a href="#" class="btn btn-outline-success btn-sm"><i class="bi bi-cart-plus"></i> Add to Basket</a>
+                    <a href="orderredirect.php" class="btn btn-outline-success btn-sm">
+                        <i class="bi bi-cart-plus"></i> Order on just eat</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 
 <!-- Reviews Section -->
@@ -160,8 +158,6 @@
     <script async src="https://www.tiktok.com/embed.js"></script>
 </div>
 
-
-
 <!-- Review botton -->
 <div class="text-center mt-4">
         <a href="review.php" class="btn btn-outline-success">
@@ -178,18 +174,17 @@
     </div>
 </div>
 
-<!-- Google Map Section -->
+<!-- Google Maps Section with Geolocation -->
 <div class="container my-5">
-    <!-- Section Title -->
-    <h2 class="text-center mb-4 fw-bold">📍 Find Us</h2>
+    <h2 class="text-center mb-4 fw-bold">📍 Find Us or Locate Yourself</h2>
 
-    <!-- Map Section with Shadow and Rounded Corners -->
     <div class="row justify-content-center">
         <div class="col-md-10 col-lg-8">
-            <div class="map-container rounded shadow-lg overflow-hidden" 
+            <!-- Map Container with Business Location -->
+            <div class="map-container rounded shadow-lg overflow-hidden mb-4" 
                  style="border: 5px solid #28a745; transition: transform 0.3s ease-in-out;">
-                <!-- Google Maps Embed -->
                 <iframe 
+                    id="defaultMap"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.9799335791076!2d-2.1300580246362917!3d52.588056031190256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487083cb0f37dc97%3A0x9cb8e3cc0509a0d0!2sUniversity%20of%20Wolverhampton!5e0!3m2!1sen!2suk!4v1742575708689!5m2!1sen!2suk"
                     width="100%"
                     height="400"
@@ -199,10 +194,67 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
+
+            
+            <div id="userLocationMap" class="map-container rounded shadow-lg overflow-hidden" 
+                 style="border: 5px solidrgb(10, 95, 37); transition: transform 0.3s ease-in-out; display: none;">
+            </div>
+
+            
+            <div class="text-center mt-3">
+                <button onclick="getUserLocation()" class="btn btn-success fw-bold">
+                    📍 Locate Me
+                </button>
+            </div>
         </div>
     </div>
+</div>
 
-    <!-- Contact Details Below the Map -->
+
+<script>
+    
+    function getUserLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showUserPosition, showError);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    
+    function showUserPosition(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        
+        document.getElementById('defaultMap').style.display = 'none';
+        document.getElementById('userLocationMap').style.display = 'block';
+
+        
+        var mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}&output=embed`;
+        document.getElementById('userLocationMap').innerHTML = `<iframe width="100%" height="400" src="${mapUrl}" allowfullscreen></iframe>`;
+    }
+
+    
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                alert("❌ User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("⚠️ An unknown error occurred.");
+                break;
+        }
+    }
+</script>
+
+
     <div class="row mt-4 text-center">
         <div class="col-md-4">
             <div class="p-3 border rounded shadow-sm bg-light">
