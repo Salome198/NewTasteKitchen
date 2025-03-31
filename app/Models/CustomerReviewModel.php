@@ -7,7 +7,8 @@ use CodeIgniter\Model;
 class CustomerReviewModel extends Model
 {
     protected $table = 'customer_reviews';
-    protected $allowedFields = ['name', 'review'];
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['name', 'review', 'created_at'];
        /**
      * @param false|string $slug
      *
@@ -19,9 +20,11 @@ class CustomerReviewModel extends Model
             return $this->findAll();
         }
 
-        return $this->where(['review' => $slug])->first();
+        return $this->where(['home' => $slug])->first();
     }
 
-
+    public function addReviews($data)
+    {
+        return $this->insert($data);
+    }
 }
-
