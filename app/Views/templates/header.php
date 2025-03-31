@@ -60,10 +60,22 @@
         border: 2px solid #198754;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
+
+    /* CEO Section Styling */
+.ceo-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+    /* Award Cards */
+.card img {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
     </style>
   <body>
-    
-</header>
 
-   
-   
+</header>
