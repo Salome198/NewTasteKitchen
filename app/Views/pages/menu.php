@@ -1,5 +1,6 @@
 <h2><?= esc($title) ?></h2>
 
+
 <?php if ($news_list !== []): ?>
 
     <div class="text-center"> 
@@ -10,7 +11,8 @@
     <?php foreach ($news_list as $news_item): ?>
         <div class="col-md-4 d-flex justify-content-center">
             <div class="card shadow-lg" style="width: 18rem; border-radius: 10px; overflow: hidden;">
-                <img src="<?= esc($news_item['image']) ?>" 
+
+                <img src="../<?= esc($news_item['image']) ?>" 
                      class="card-img-top food-img" 
                      alt="<?= esc($news_item['name']) ?>"
                      style="height: 200px; object-fit: cover;">
@@ -26,9 +28,6 @@
             </div>
         </div>
    
-          
-
-
 
         <!-- Modal for each food item -->
     <div class="modal fade" id="viewFood<?= esc($news_item['id']) ?>" tabindex="-1">
