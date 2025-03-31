@@ -7,6 +7,7 @@ use CodeIgniter\Model;
 class NewsModel extends Model
 {
     protected $table = 'news';
+    protected $allowedFields = ['title', 'slug', 'body'];
        /**
      * @param false|string $slug
      *
@@ -20,4 +21,6 @@ class NewsModel extends Model
 
         return $this->where(['slug' => $slug])->first();
     }
+
+
 }
